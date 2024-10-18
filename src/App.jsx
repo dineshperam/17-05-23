@@ -36,12 +36,30 @@ const routes = [
 ];
 
 function App() {
-
   return (
     <>
-      App
+      <ThemeProvider theme={theme}>
+        <Router>
+          <GlobalStyles />
+
+          <Routes>
+            {routes.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element}>
+                {route.children &&
+                  route.children.map((childRoute, childIndex) => (
+                    <Route
+                      key={childIndex}
+                      path={childRoute.path}
+                      element={childRoute.element}
+                    />
+                  ))}
+              </Route>
+            ))}
+          </Routes>
+        </Router>
+      </ThemeProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

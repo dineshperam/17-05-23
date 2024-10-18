@@ -1,6 +1,4 @@
-// Default styles - In the context of Styled Components, the default.js file is 
-//typically used to define reusable styled components that can be imported and used 
-//across various parts of your application.
+// Default styles - In the context of Styled Components, the default.js file is typically used to define reusable styled components that can be imported and used across various parts of your application.
 
 import styled, { css } from "styled-components";
 import { media, theme } from "../theme/theme";
